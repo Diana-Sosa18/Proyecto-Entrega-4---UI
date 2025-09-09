@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Laboratorio 4 - Login</string>
+    <string name="app_name">Destiny</string>
 
     <!-- Login Screen -->
     <string name="login_title">Inicia sesion en tu cuenta</string>
