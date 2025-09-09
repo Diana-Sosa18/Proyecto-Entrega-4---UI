@@ -1,5 +1,7 @@
 package com.example.laboratorio4_login.presentation.login
 
+import com.example.laboratorio4_login.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -25,7 +27,7 @@ fun RegisterScreen(navController: NavController) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = "Pantalla de Registro",
+                text = stringResource(R.string.register_title),
                 style = MaterialTheme.typography.headlineMedium,
                 modifier = Modifier.padding(bottom = 16.dp)
             )
@@ -33,7 +35,7 @@ fun RegisterScreen(navController: NavController) {
             Button(
                 onClick = { navController.popBackStack() }
             ) {
-                Text("Volver al Login")
+                Text(stringResource(R.string.back_to_login))
             }
         }
     }
