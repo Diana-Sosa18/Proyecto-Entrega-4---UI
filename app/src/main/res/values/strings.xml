@@ -19,4 +19,14 @@
 
     <!-- Image Content Descriptions -->
     <string name="logo_image">Logo de la aplicación</string>
+
+    <!-- Journal Screen -->
+    <string name="title_journal_screen">Mi Diario</string>
+    <string name="welcome_journal_message">¡Bienvenido al Journal!</string>
+
+    <!-- Etiquetas para los botones de la barra de navegación inferior -->
+    <string name="bottom_nav_journal">Diario</string>
+    <string name="bottom_nav_articles">Artículos</string>
+    <string name="bottom_nav_home">Inicio</string>
+    <string name="bottom_nav_profile">Perfil</string>
 </resources>

@@ -49,6 +49,8 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.navigation.NavController
 import com.example.laboratorio4_login.R
+import com.example.laboratorio4_login.ROUTE_JOURNAL
+import com.example.laboratorio4_login.ROUTE_LOGIN
 import com.example.laboratorio4_login.presentation.login.components.RoundedButton
 import com.example.laboratorio4_login.presentation.login.components.TransparentTextField
 
@@ -211,7 +213,11 @@ fun LoginScreen(navController: NavController) {
                             top.linkTo(surface.top, margin = (-36).dp)
                             end.linkTo(surface.end, margin = 36.dp)
                         },
-                    onClick = {}
+                    onClick = {
+                        navController.navigate(ROUTE_JOURNAL) {
+                            popUpTo(ROUTE_LOGIN) { inclusive = true }
+                        }
+                    }
                 ){
                     Icon(
                         modifier = Modifier.size(42.dp),
