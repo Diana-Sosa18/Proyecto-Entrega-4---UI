@@ -46,12 +46,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.navigation.NavController
 import com.example.laboratorio4_login.R
 import com.example.laboratorio4_login.presentation.login.components.RoundedButton
 import com.example.laboratorio4_login.presentation.login.components.TransparentTextField
 
 @Composable
-fun LoginScreen(){
+fun LoginScreen(navController: NavController) {
 
     val emailValue = rememberSaveable{ mutableStateOf("")}
     val passwordValue = rememberSaveable{mutableStateOf("")}
@@ -185,7 +186,8 @@ fun LoginScreen(){
                                     }
                                 }
                             ) {
-                                // TODO("NAVIGATE TO REGISTER SCREEN")
+
+                                navController.navigate("register")
                             }
                         }
                     }
