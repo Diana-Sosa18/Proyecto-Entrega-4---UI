@@ -128,7 +128,11 @@ fun LoginScreen(navController: NavController) {
                                 keyboardActions = KeyboardActions(
                                     onDone = {
                                         focusManager.clearFocus()
-                                        //TODO("LOGIN")
+
+                                        navController.navigate(ROUTE_JOURNAL) {
+                                            popUpTo(ROUTE_LOGIN) { inclusive = true }
+                                        }
+
                                     }
                                 ),
                                 imeAction = ImeAction.Done,
@@ -168,7 +172,11 @@ fun LoginScreen(navController: NavController) {
                                 text = "Login",
                                 displayProgressBar = false,
                                 onClick = {
-                                    //TODO("Login")
+
+                                    navController.navigate(ROUTE_JOURNAL) {
+                                        popUpTo(ROUTE_LOGIN) { inclusive = true }
+                                    }
+
                                 }
                             )
 
