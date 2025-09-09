@@ -4,12 +4,21 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.stringResource
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.laboratorio4_login.presentation.login.LoginScreen
 import com.example.laboratorio4_login.presentation.login.RegisterScreen
 import com.example.laboratorio4_login.ui.theme.Laboratorio4LoginTheme
+import com.example.laboratorio4_login.presentation.login.journal.JournalScreen
+import com.example.laboratorio4_login.presentation.login.LoginScreen
+import com.example.laboratorio4_login.ui.theme.Laboratorio4LoginTheme
+import com.example.laboratorio4_login.presentation.login.RegisterScreen
+import com.example.laboratorio4_login.presentation.login.articles.ArticlesScreen
+import com.example.laboratorio4_login.presentation.login.home.HomeScreen
+import com.example.laboratorio4_login.presentation.login.profile.ProfileScreen
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,19 +31,42 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+const val ROUTE_LOGIN = "login"
+const val ROUTE_REGISTER = "register"
+const val ROUTE_JOURNAL = "journal"
+const val ROUTE_HOME = "home"
+const val ROUTE_ARTICLES = "articles"
+const val ROUTE_PROFILE = "profile"
+
+
 @Composable
 fun Navigation() {
     val navController = rememberNavController()
 
     NavHost(
         navController = navController,
-        startDestination = "login"
+        startDestination = ROUTE_LOGIN
     ) {
-        composable("login") {
+        composable(ROUTE_LOGIN) {
             LoginScreen(navController = navController)
         }
-        composable("register") {
+        composable(ROUTE_REGISTER) {
             RegisterScreen(navController = navController)
+        }
+        composable(ROUTE_JOURNAL) {
+            JournalScreen(
+                navController = navController,
+                mainNavController = navController
+            )
+        }
+        composable(ROUTE_ARTICLES) {
+            ArticlesScreen()
+        }
+        composable(ROUTE_HOME) {
+            HomeScreen()
+        }
+        composable(ROUTE_PROFILE) {
+            ProfileScreen()
         }
     }
 }
