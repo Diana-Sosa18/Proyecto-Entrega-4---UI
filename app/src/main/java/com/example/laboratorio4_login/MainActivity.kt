@@ -10,6 +10,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.laboratorio4_login.presentation.login.LoginScreen
 import com.example.laboratorio4_login.presentation.login.RegisterScreen
 import com.example.laboratorio4_login.ui.theme.Laboratorio4LoginTheme
+import com.example.laboratorio4_login.presentation.articulos.ArticulosScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
