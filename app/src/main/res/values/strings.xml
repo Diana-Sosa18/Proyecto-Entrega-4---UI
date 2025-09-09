@@ -1,3 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">RachApp</string>
+    <string name="app_name">Destiny</string>
+
+    <!-- Login Screen -->
+    <string name="login_title">Inicia sesion en tu cuenta</string>
+    <string name="email_label">Email</string>
+    <string name="password_label">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="login_button">Login</string>
+    <string name="no_account">Do not have an Account?</string>
+    <string name="sign_up">Sign up</string>
+    <string name="toggle_password">Toggle Password Icon</string>
+    <string name="forward_icon">Forward Icon</string>
+
+    <!-- Register Screen -->
+    <string name="register_title">Pantalla de Registro</string>
+    <string name="back_to_login">Volver al Login</string>
+
+    <!-- Image Content Descriptions -->
+    <string name="logo_image">Logo de la aplicación</string>
 </resources>

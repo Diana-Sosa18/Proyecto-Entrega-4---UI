@@ -28,7 +28,10 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.Column
 
 @Composable
-fun AppNavigation(modifier: Modifier = Modifier) {
+fun AppNavigation(
+    modifier: Modifier = Modifier,
+    onLogout: () -> Unit
+) {
     val navController = rememberNavController()
     var selectedTab by remember { mutableStateOf(Screen.Home.route) }
 
@@ -90,7 +93,8 @@ fun AppNavigation(modifier: Modifier = Modifier) {
     ) { padding ->
         AppNavHost(
             navController = navController,
-            modifier = modifier.padding(padding)
+            modifier = modifier.padding(padding),
+            onLogout = onLogout
         )
     }
 }

@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
@@ -44,7 +45,9 @@ import com.uvg.rachapp.R
 import kotlinx.coroutines.launch
 
 @Composable
-fun AppScreen() {
+fun AppScreen(
+    onLogout: () -> Unit
+) {
     var selectedTab by remember { mutableIntStateOf(2) } // Pantalla activa
 
     val tabItems = listOf(
@@ -89,7 +92,7 @@ fun AppScreen() {
     ) { padding ->
         Box(modifier = Modifier.padding(padding)) {
             when (selectedTab) {
-                2 -> HomeScreen() // Pantalla del perro
+                2 -> HomeScreen(onLogout) // Pantalla del perro
                 else -> PlaceholderScreen("Pantalla $selectedTab")
             }
         }
@@ -98,7 +101,7 @@ fun AppScreen() {
 
 // ---- Pantalla Home ----
 @Composable
-fun HomeScreen() {
+fun HomeScreen(onLogout: () -> Unit) {
     val scope = rememberCoroutineScope()
     var scale by remember { mutableStateOf(1f) }
 
@@ -122,7 +125,10 @@ fun HomeScreen() {
         CalendarView()
 
         Spacer(modifier = Modifier.height(16.dp))
-
+        Button(onClick = { onLogout() }) {
+            Text("Cerrar sesión")
+        }
+        Spacer(modifier = Modifier.height(16.dp))
         // Botón + texto
         Row(
             verticalAlignment = Alignment.CenterVertically,
@@ -143,6 +149,7 @@ fun HomeScreen() {
                     }
             )
             Spacer(modifier = Modifier.width(8.dp))
+
             Text(
                 "<-",
                 fontSize = 26.sp

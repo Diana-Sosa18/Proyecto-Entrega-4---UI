@@ -14,16 +14,16 @@ import com.uvg.rachapp.ui.screens.profile.ProfileScreen
 fun AppNavHost(
     navController: NavHostController,
     modifier: Modifier = Modifier,
-    startDestination: String = Screen.Home.route
+    onLogout: () -> Unit
 ) {
     NavHost(
         navController = navController,
-        startDestination = startDestination,
+        startDestination = Screen.Home.route,
         modifier = modifier
     ) {
         composable(Screen.Journal.route) { JournalScreen() }
         composable(Screen.News.route) { NewsScreen() }
-        composable(Screen.Home.route) { HomeScreen() }
+        composable(Screen.Home.route) { HomeScreen(onLogout) }
         composable(Screen.Profile.route) { ProfileScreen() }
     }
 }

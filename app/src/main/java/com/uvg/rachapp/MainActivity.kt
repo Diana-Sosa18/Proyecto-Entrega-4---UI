@@ -20,17 +20,33 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.compose.rememberNavController
+import com.uvg.rachapp.ui.navigation.AppNavHost
 import com.uvg.rachapp.ui.theme.RachAppTheme
 import kotlinx.coroutines.launch
 import com.uvg.rachapp.ui.screens.home.AppScreen
 import com.uvg.rachapp.ui.navigation.AppNavigation
+import com.uvg.rachapp.ui.navigation.AuthNavHost
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             RachAppTheme {
-               AppNavigation(modifier = Modifier.fillMaxSize())
+                var isLoggedIn by remember { mutableStateOf(false) } // Estado de autenticación
+                val navController = rememberNavController()
+
+                if (isLoggedIn) {
+                    AppNavigation (
+                        modifier = Modifier.fillMaxSize(),
+                        onLogout = { isLoggedIn = false }
+                        )
+                } else {
+                    AuthNavHost(
+                        navController = navController,
+                        modifier = Modifier.fillMaxSize(),
+                        onLoginSuccess = { isLoggedIn = true })
+                }
             }
         }
     }
