@@ -19,4 +19,19 @@
 
     <!-- Image Content Descriptions -->
     <string name="logo_image">Logo de la aplicación</string>
+
+    <!-- Pantalla de Artículos -->
+    <string name="articulos_title">Artículos</string>
+
+    <string name="articulo1_title">El efecto de la dopamina en las redes sociales</string>
+    <string name="articulo1_desc">Explica cómo los “me gusta” y notificaciones generan placer en el cerebro y pueden causar adicción digital.</string>
+
+    <string name="articulo2_title">Alcohol y sueño: una combinación engañosa</string>
+    <string name="articulo2_desc">Aunque ayuda a dormir rápido, el alcohol interrumpe el descanso y afecta la energía del día siguiente.</string>
+
+    <string name="articulo3_title">Desintoxicación digital: cómo empezar</string>
+    <string name="articulo3_desc">Consejos prácticos para reducir el uso de redes y mejorar la concentración y la salud mental.</string>
+
+    <string name="articulo4_title">El alcohol y su impacto en las relaciones personales</string>
+    <string name="articulo4_desc">Muestra cómo el consumo excesivo puede dañar la confianza y la convivencia con familia y amigos.</string>
 </resources>
