@@ -1,5 +1,6 @@
 package com.example.laboratorio4_login.presentation.login
 
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -51,6 +52,8 @@ import com.example.laboratorio4_login.R
 import com.example.laboratorio4_login.presentation.login.components.RoundedButton
 import com.example.laboratorio4_login.presentation.login.components.TransparentTextField
 
+
+
 @Composable
 fun LoginScreen(navController: NavController) {
 
@@ -97,7 +100,7 @@ fun LoginScreen(navController: NavController) {
                         verticalArrangement = Arrangement.SpaceEvenly
                     ){
                         Text(
-                            text = "Inicia sesion en tu cuenta",
+                            text = stringResource(R.string.login_title),
                             style = MaterialTheme.typography.headlineMedium.copy(
                                 color = MaterialTheme.colorScheme.primary
                             )
@@ -111,7 +114,7 @@ fun LoginScreen(navController: NavController) {
                         ){
                             TransparentTextField(
                                 textFieldValue = emailValue,
-                                textLabel = "Email",
+                                textLabel = stringResource(R.string.email_label),
                                 keyboardType = KeyboardType.Email,
                                 keyboardActions = KeyboardActions(
                                     onNext = {
@@ -123,7 +126,7 @@ fun LoginScreen(navController: NavController) {
 
                             TransparentTextField(
                                 textFieldValue = passwordValue,
-                                textLabel = "Password",
+                                textLabel = stringResource(R.string.password_label),
                                 keyboardType = KeyboardType.Password,
                                 keyboardActions = KeyboardActions(
                                     onDone = {
@@ -157,7 +160,7 @@ fun LoginScreen(navController: NavController) {
 
                             Text(
                                 modifier = Modifier.fillMaxWidth(),
-                                text = "Forgot Password?",
+                                text = stringResource(R.string.forgot_password),
                                 style = MaterialTheme.typography.bodyLarge,
                                 textAlign = TextAlign.End
                             )
@@ -169,7 +172,7 @@ fun LoginScreen(navController: NavController) {
                             verticalArrangement = Arrangement.spacedBy(8.dp)
                         ){
                             RoundedButton(
-                                text = "Login",
+                                text = stringResource(R.string.login_button),
                                 displayProgressBar = false,
                                 onClick = {
 
@@ -182,7 +185,7 @@ fun LoginScreen(navController: NavController) {
 
                             ClickableText(
                                 text = buildAnnotatedString {
-                                    append("Do not have an Account? ")
+                                    append(stringResource(R.string.no_account) + " ")
 
                                     withStyle(
                                         style = SpanStyle(
@@ -190,7 +193,7 @@ fun LoginScreen(navController: NavController) {
                                             fontWeight = FontWeight.Bold
                                         )
                                     ){
-                                        append("Sign up")
+                                        append(stringResource(R.string.sign_up))
                                     }
                                 }
                             ) {
